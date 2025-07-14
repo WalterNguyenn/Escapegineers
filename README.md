@@ -1,6 +1,6 @@
 # Escapegineers
 
-A Purdue-inspired escape room game built with Next.js and Tailwind CSS.
+A Purdue-inspired escape room website built with Next.js and Tailwind CSS.
 
 ## Getting Started
 

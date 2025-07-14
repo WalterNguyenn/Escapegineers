@@ -1,164 +1,101 @@
+'use client'
+
+import { useState } from 'react'
+import { motion } from 'framer-motion'
 import LeaderboardRow from '@/components/LeaderboardRow'
 
-const sampleLeaderboard = [
-  {
-    rank: 1,
-    playerName: "BoilerEngineer",
-    score: 12500,
-    time: "42:15",
-    date: "2024-01-15",
-    room: "The Boilermaker Challenge"
-  },
-  {
-    rank: 2,
-    playerName: "PurduePuzzleMaster",
-    score: 11800,
-    time: "45:32",
-    date: "2024-01-14",
-    room: "The Engineering Lab"
-  },
-  {
-    rank: 3,
-    playerName: "EscapeArtist2024",
-    score: 11200,
-    time: "48:07",
-    date: "2024-01-13",
-    room: "The Boilermaker Challenge"
-  },
-  {
-    rank: 4,
-    playerName: "LabRat",
-    score: 10800,
-    time: "50:23",
-    date: "2024-01-12",
-    room: "The Engineering Lab"
-  },
-  {
-    rank: 5,
-    playerName: "FoundryExplorer",
-    score: 10200,
-    time: "52:45",
-    date: "2024-01-11",
-    room: "The Foundry Mystery"
-  },
-  {
-    rank: 6,
-    playerName: "PuzzlePro",
-    score: 9800,
-    time: "55:12",
-    date: "2024-01-10",
-    room: "The Engineering Lab"
-  },
-  {
-    rank: 7,
-    playerName: "EscapeEnthusiast",
-    score: 9400,
-    time: "57:33",
-    date: "2024-01-09",
-    room: "The Boilermaker Challenge"
-  },
-  {
-    rank: 8,
-    playerName: "RoomRunner",
-    score: 9000,
-    time: "59:01",
-    date: "2024-01-08",
-    room: "The Foundry Mystery"
-  }
-]
-
 export default function LeaderboardPage() {
+  const [selectedRoom, setSelectedRoom] = useState('all')
+
+  const rooms = [
+    { id: 'all', name: 'All Rooms' },
+    { id: 'mung-chang', name: "Mung Chang's Office" }
+  ]
+
+  // Empty leaderboard data - ready for future implementation
+  const leaderboardData: any[] = []
+
   return (
-    <main className="min-h-screen bg-boiler text-ivory">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text py-16 transition-colors">
+      <div className="container mx-auto px-4">
+        {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="font-heading text-5xl font-bold text-goldplus mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold text-light-gold dark:text-dark-gold mb-4">
             Leaderboard
           </h1>
-          <p className="font-body text-xl text-foundry max-w-2xl mx-auto">
-            See who has conquered our escape rooms and achieved the fastest times.
+          <p className="font-body text-xl text-light-muted dark:text-dark-muted max-w-2xl mx-auto">
+            See the fastest escape times and compete for the top spot!
           </p>
         </div>
 
-        {/* Stats Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-foundry rounded-lg p-6 text-center">
-            <h3 className="font-heading text-2xl font-bold text-goldplus mb-2">
-              Total Players
-            </h3>
-            <p className="font-body text-3xl font-bold text-ivory">1,247</p>
-          </div>
-          <div className="bg-foundry rounded-lg p-6 text-center">
-            <h3 className="font-heading text-2xl font-bold text-goldplus mb-2">
-              Escape Rate
-            </h3>
-            <p className="font-body text-3xl font-bold text-ivory">68%</p>
-          </div>
-          <div className="bg-foundry rounded-lg p-6 text-center">
-            <h3 className="font-heading text-2xl font-bold text-goldplus mb-2">
-              Average Time
-            </h3>
-            <p className="font-body text-3xl font-bold text-ivory">52:30</p>
-          </div>
+        {/* Room Filter */}
+        <div className="mb-8 flex justify-center">
+          <select
+            value={selectedRoom}
+            onChange={(e) => setSelectedRoom(e.target.value)}
+            className="bg-light-card dark:bg-dark-surface text-light-text dark:text-dark-text border border-light-border dark:border-dark-border rounded-lg px-4 py-2 focus:outline-none focus:border-light-gold dark:focus:border-dark-gold transition-colors"
+          >
+            {rooms.map((room) => (
+              <option key={room.id} value={room.id}>
+                {room.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         {/* Leaderboard Table */}
-        <div className="bg-foundry rounded-lg overflow-hidden">
-          <div className="p-6 border-b border-boiler">
-            <h2 className="font-heading text-2xl font-bold text-goldplus">
-              Top Performers
-            </h2>
+        <div className="bg-light-card dark:bg-dark-surface rounded-lg overflow-hidden border border-light-border dark:border-dark-border">
+          {/* Table Header */}
+          <div className="bg-light-hover dark:bg-dark-hover px-6 py-4">
+            <div className="grid grid-cols-4 gap-4 font-heading text-light-gold dark:text-dark-gold">
+              <div>Rank</div>
+              <div>Team Name</div>
+              <div>Time</div>
+              <div>Date</div>
+            </div>
           </div>
-          
-          <div className="divide-y divide-boiler">
-            {sampleLeaderboard.map((entry) => (
-              <LeaderboardRow key={entry.rank} {...entry} />
-            ))}
+
+          {/* Table Body */}
+          <div className="divide-y divide-light-border dark:divide-dark-border">
+            {leaderboardData.length > 0 ? (
+              leaderboardData.map((entry, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <LeaderboardRow {...entry} />
+                </motion.div>
+              ))
+            ) : (
+              <div className="px-6 py-16 text-center">
+                <div className="text-6xl mb-4">🏆</div>
+                <h3 className="font-heading text-2xl font-bold text-light-gold dark:text-dark-gold mb-4">
+                  No Times Yet
+                </h3>
+                <p className="font-body text-light-muted dark:text-dark-muted mb-8">
+                  Be the first to escape and claim your spot on the leaderboard!
+                </p>
+                <a
+                  href="/book"
+                  className="inline-block bg-light-gold hover:bg-light-gold/80 dark:bg-dark-gold dark:hover:bg-dark-gold/80 text-white font-body px-8 py-4 rounded-lg transition-colors"
+                >
+                  Book Your Escape
+                </a>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Achievement Section */}
-        <div className="mt-12 bg-foundry rounded-lg p-8">
-          <h2 className="font-heading text-3xl font-bold text-goldplus mb-6 text-center">
-            Recent Achievements
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-goldplus rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🏆</span>
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-ivory mb-2">
-                Speed Demon
-              </h3>
-              <p className="font-body text-foundry">
-                Completed a room in under 30 minutes
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-magenta rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🧩</span>
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-ivory mb-2">
-                Puzzle Master
-              </h3>
-              <p className="font-body text-foundry">
-                Solved all puzzles without hints
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-foundry rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🚂</span>
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-ivory mb-2">
-                Boiler Up!
-              </h3>
-              <p className="font-body text-foundry">
-                Completed all Purdue-themed rooms
-              </p>
-            </div>
-          </div>
+        {/* Coming Soon Note */}
+        <div className="mt-12 text-center">
+          <p className="font-body text-light-muted dark:text-dark-muted italic">
+            Leaderboard will be populated once we have active players. 
+            Check back after your escape room experience!
+          </p>
         </div>
       </div>
-    </main>
+    </div>
   )
 } 

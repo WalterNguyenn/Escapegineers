@@ -1,5 +1,5 @@
-@import "@fontsource/cinzel";
 @import "@fontsource/inter";
+@import "@fontsource/roboto-slab";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
