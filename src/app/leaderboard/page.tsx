@@ -24,7 +24,7 @@ export default function LeaderboardPage() {
             Leaderboard
           </h1>
           <p className="font-body text-xl text-light-muted dark:text-dark-muted max-w-2xl mx-auto">
-            See the fastest escape times and compete for the top spot!
+            Think you can beat the best? Check out today&apos;s top escape teams!
           </p>
         </div>
 
@@ -70,7 +70,6 @@ export default function LeaderboardPage() {
               ))
             ) : (
               <div className="px-6 py-16 text-center">
-                <div className="text-6xl mb-4">🏆</div>
                 <h3 className="font-heading text-2xl font-bold text-light-gold dark:text-dark-gold mb-4">
                   No Times Yet
                 </h3>

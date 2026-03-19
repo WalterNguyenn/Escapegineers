@@ -67,85 +67,80 @@ export default function ContactPage() {
             </h2>
 
             {/* Contact Details */}
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-light-gold dark:bg-dark-gold rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white">📍</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold text-light-text dark:text-dark-text mb-1">
-                    Location
-                  </h3>
-                  <p className="font-body text-light-muted dark:text-dark-muted">
-                    Engineering Science & Technology Building<br />
-                    723 W Michigan St<br />
-                    Indianapolis, IN 46202
-                  </p>
-                </div>
+            <div className="mb-8 space-y-6">
+              <div className="border-l-2 border-light-gold pl-4 dark:border-dark-gold">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-light-text dark:text-dark-text">
+                  Location
+                </h3>
+                <p className="font-body text-light-muted dark:text-dark-muted">
+                  Engineering Science &amp; Technology Building
+                  <br />
+                  723 W Michigan St
+                  <br />
+                  Indianapolis, IN 46202
+                </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-light-gold dark:bg-dark-gold rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white">📧</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold text-light-text dark:text-dark-text mb-1">
-                    Email
-                  </h3>
-                  <a
-                    href="mailto:escapegineers@gmail.com"
-                    className="font-body text-light-muted dark:text-dark-muted hover:text-light-gold dark:hover:text-dark-gold transition-colors"
-                  >
-                    escapegineers@gmail.com
-                  </a>
-                </div>
+              <div className="border-l-2 border-light-gold pl-4 dark:border-dark-gold">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-light-text dark:text-dark-text">
+                  Email
+                </h3>
+                <a
+                  href="mailto:escapegineers@gmail.com"
+                  className="font-body text-light-muted transition-colors hover:text-light-gold dark:text-dark-muted dark:hover:text-dark-gold"
+                >
+                  escapegineers@gmail.com
+                </a>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-light-gold dark:bg-dark-gold rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white">🕒</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold text-light-text dark:text-dark-text mb-1">
-                    Hours
-                  </h3>
-                  <p className="font-body text-light-muted dark:text-dark-muted">
-                    Monday - Friday: 12 PM - 7 PM<br />
-                    Saturday - Sunday: Closed
-                  </p>
-                </div>
+              <div className="border-l-2 border-light-gold pl-4 dark:border-dark-gold">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-light-text dark:text-dark-text">
+                  Hours
+                </h3>
+                <p className="font-body text-light-muted dark:text-dark-muted">
+                  Monday – Friday: 12 PM – 7 PM
+                  <br />
+                  Saturday – Sunday: Closed
+                </p>
               </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-light-gold dark:bg-dark-gold rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-white">📱</span>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg font-semibold text-light-text dark:text-dark-text mb-1">
-                    Follow Us
-                  </h3>
-                  <a
-                    href="https://www.instagram.com/escapegineers?igsh=MTdjczg1ZHp1cnRvZA=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body text-light-muted dark:text-dark-muted hover:text-light-gold dark:hover:text-dark-gold transition-colors"
-                  >
-                    @escapegineers on Instagram
-                  </a>
-                </div>
+              <div className="border-l-2 border-light-gold pl-4 dark:border-dark-gold">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-light-text dark:text-dark-text">
+                  Follow Us
+                </h3>
+                <a
+                  href="https://www.instagram.com/escapegineers?igsh=MTdjczg1ZHp1cnRvZA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body text-light-muted transition-colors hover:text-light-gold dark:text-dark-muted dark:hover:text-dark-gold"
+                >
+                  @escapegineers on Instagram
+                </a>
               </div>
             </div>
 
-            {/* Google Maps Placeholder */}
-            <div className="bg-light-card dark:bg-dark-surface rounded-lg p-8 border border-light-border dark:border-dark-border text-center">
-              <div className="w-16 h-16 bg-light-gold/20 dark:bg-dark-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🗺️</span>
-              </div>
-              <h3 className="font-heading text-lg font-semibold text-light-text dark:text-dark-text mb-2">
-                Interactive Map
+            <div className="overflow-hidden rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-surface shadow-md">
+              <h3 className="font-heading border-b border-light-border dark:border-dark-border bg-light-hover/50 px-4 py-3 text-lg font-semibold text-light-text dark:text-dark-text dark:bg-dark-hover/50">
+                Find us
               </h3>
-              <p className="font-body text-light-muted dark:text-dark-muted text-sm">
-                Google Maps integration will be added here
+              <iframe
+                title="Map — Engineering Science & Technology Building, Indianapolis"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-86.1762%2C39.7709%2C-86.1711%2C39.7735&layer=mapnik&marker=39.77217,-86.17363"
+                className="h-72 w-full min-h-[16rem] border-0 bg-light-hover dark:bg-dark-hover"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <p className="border-t border-light-border dark:border-dark-border px-4 py-3 font-body text-xs text-light-muted dark:text-dark-muted">
+                <a
+                  href="https://www.openstreetmap.org/?mlat=39.77217&mlon=-86.17363#map=17/39.77217/-86.17363"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-light-gold underline decoration-light-gold/40 underline-offset-2 hover:text-light-text dark:text-dark-gold dark:decoration-dark-gold/40 dark:hover:text-dark-text"
+                >
+                  Open full map
+                </a>
+                <span className="mx-2 text-light-border dark:text-dark-border">·</span>
+                723 W Michigan St, Indianapolis, IN 46202
               </p>
             </div>
           </div>
@@ -160,7 +155,7 @@ export default function ContactPage() {
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">
                 <p className="font-body text-green-600 dark:text-green-400">
-                  ✅ Message sent successfully! We&apos;ll get back to you soon.
+                  Message sent successfully. We&apos;ll get back to you soon.
                 </p>
               </div>
             )}
@@ -168,7 +163,7 @@ export default function ContactPage() {
             {submitStatus === 'error' && (
               <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
                 <p className="font-body text-red-600 dark:text-red-400">
-                  ❌ Failed to send message. Please try again or email us directly.
+                  Failed to send message. Please try again or email us directly.
                 </p>
               </div>
             )}

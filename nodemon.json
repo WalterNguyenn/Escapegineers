@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "public", "next.config.js", "tailwind.config.ts", "postcss.config.js"],
+  "ext": "js,jsx,ts,tsx,mjs,cjs,json,css,md",
+  "ignore": [".next", "node_modules"],
+  "exec": "next dev"
+}

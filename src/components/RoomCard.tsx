@@ -28,7 +28,7 @@ export default function RoomCard({
   return (
     <div className="bg-light-card dark:bg-dark-surface rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-light-border dark:border-dark-border">
       {/* Image */}
-      <div className="h-48 bg-gradient-to-br from-light-gold dark:from-dark-gold to-light-gold/60 dark:to-dark-gold/60 relative">
+      <div className="relative h-48 bg-light-gold dark:bg-dark-gold">
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h3 className="font-heading text-2xl font-bold text-white text-center px-4">
             {title}

@@ -53,6 +53,15 @@ export default function BookingWizard() {
         <div className="max-w-6xl mx-auto">
           {currentStep === 1 && (
             <div>
+              {!AVAILABLE_ROOMS.some((r) => r.available) && (
+                <div className="mb-8 rounded-lg border border-light-border bg-light-card p-5 text-center dark:border-dark-border dark:bg-dark-surface">
+                  <p className="font-body text-light-text dark:text-dark-text">
+                    Online booking is opening soon. Rooms will be{' '}
+                    <strong className="font-semibold text-light-gold dark:text-dark-gold">free</strong> when we
+                    launch.
+                  </p>
+                </div>
+              )}
               <RoomSelect
                 rooms={AVAILABLE_ROOMS}
                 selectedRoom={bookingData.room}
@@ -145,15 +154,6 @@ export default function BookingWizard() {
           )}
         </div>
 
-        {/* Debug Info (Remove in production) */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="fixed bottom-4 right-4 bg-light-card dark:bg-dark-surface p-4 rounded-lg border border-light-border dark:border-dark-border text-xs">
-            <p className="font-mono">Step: {currentStep}</p>
-            <p className="font-mono">Room: {bookingData.room?.title || 'None'}</p>
-            <p className="font-mono">Date: {bookingData.date || 'None'}</p>
-            <p className="font-mono">Time: {bookingData.timeSlot?.startTime || 'None'}</p>
-          </div>
-        )}
       </div>
     </div>
   )

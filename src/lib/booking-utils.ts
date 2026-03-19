@@ -1,20 +1,33 @@
 import { Room, TimeSlot } from './types'
 import { format, addDays, startOfDay, isAfter, isBefore, parse, addMinutes } from 'date-fns'
 
-// Room data - only Mung Chang's Office for now
 export const AVAILABLE_ROOMS: Room[] = [
   {
     id: 'mung-chang-office',
     title: "Mung Chang's Office",
-    description: "Navigate through Professor Mung Chang's mysterious office filled with engineering puzzles and challenges. Use your problem-solving skills to uncover the secrets hidden within.",
+    description:
+      "Navigate through Professor Mung Chang's mysterious office filled with engineering puzzles and challenges. Use your problem-solving skills to uncover the secrets hidden within.",
     difficulty: 'Medium',
-    duration: 60, // 60 minutes
+    duration: 60,
     minPlayers: 3,
     maxPlayers: 5,
-    price: 5, // $5 per person
-    image: '/rooms/mung-chang-office.jpg',
-    available: true
-  }
+    price: 0,
+    image: '/images/MungChang1.png',
+    available: false,
+  },
+  {
+    id: 'coming-soon-room',
+    title: 'Coming Soon',
+    description:
+      'A new escape room experience is in development. Check back for puzzles, story, and opening details.',
+    difficulty: 'Medium',
+    duration: 60,
+    minPlayers: 3,
+    maxPlayers: 5,
+    price: 0,
+    image: '/images/NewRoom2.png',
+    available: false,
+  },
 ]
 
 // Operating hours: Monday-Friday 12 PM - 7 PM
@@ -90,6 +103,7 @@ export function calculateTotalPrice(room: Room, playerCount: number): number {
 
 // Format price for display
 export function formatPrice(amount: number): string {
+  if (amount === 0) return 'Free'
   return `$${amount.toFixed(2)}`
 }
 

@@ -39,10 +39,14 @@ export const createBookingConfirmationEmail = (
     <!DOCTYPE html>
     <html>
     <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       <style>
-        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: Inter, system-ui, Arial, sans-serif; line-height: 1.6; color: #333; }
+        h1, h2, h3 { font-family: Oswald, system-ui, Arial, sans-serif; font-weight: 600; letter-spacing: 0.03em; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #C29A3A, #D4AF37); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
+        .header { background: #C29A3A; color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
         .content { background: white; padding: 30px; border: 1px solid #ddd; }
         .booking-details { background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0; }
         .detail-row { display: flex; justify-content: space-between; margin: 10px 0; padding: 8px 0; border-bottom: 1px solid #eee; }
@@ -56,7 +60,7 @@ export const createBookingConfirmationEmail = (
     <body>
       <div class="container">
         <div class="header">
-          <h1>🎉 Booking Confirmed!</h1>
+          <h1>Booking Confirmed</h1>
           <p>Your escape room adventure awaits</p>
         </div>
         
@@ -103,7 +107,7 @@ export const createBookingConfirmationEmail = (
           </div>
           
           <div class="location">
-            <h3>📍 Location & Check-in</h3>
+            <h3>Location &amp; Check-in</h3>
             <p><strong>Engineering Science & Technology Building</strong><br>
             723 W Michigan St<br>
             Indianapolis, IN 46202</p>
@@ -112,10 +116,10 @@ export const createBookingConfirmationEmail = (
           
           <h3>What to Expect</h3>
           <ul>
-            <li>🔧 Engineering-themed puzzles and challenges</li>
-            <li>🤝 Team-based problem solving</li>
-            <li>🎓 Learn while you play</li>
-            <li>🏆 Compete for the leaderboard</li>
+            <li>Engineering-themed puzzles and challenges</li>
+            <li>Team-based problem solving</li>
+            <li>Learn while you play</li>
+            <li>Compete for the leaderboard</li>
           </ul>
           
           <h3>What to Bring</h3>
@@ -130,7 +134,7 @@ export const createBookingConfirmationEmail = (
         
         <div class="footer">
           <p>Thank you for choosing Escapegineers!</p>
-          <p>🚂 Boiler Up! 🚂</p>
+          <p>Thank you for choosing Escapegineers.</p>
           <p><small>This is an automated confirmation email. Please do not reply to this email.</small></p>
         </div>
       </div>
@@ -169,8 +173,12 @@ export const createAdminNotificationEmail = (
     <!DOCTYPE html>
     <html>
     <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       <style>
-        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: Inter, system-ui, Arial, sans-serif; line-height: 1.6; color: #333; }
+        h1, h2, h3 { font-family: Oswald, system-ui, Arial, sans-serif; font-weight: 600; letter-spacing: 0.03em; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         .header { background: #121212; color: #D4AF37; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
         .content { background: white; padding: 30px; border: 1px solid #ddd; }
@@ -185,13 +193,13 @@ export const createAdminNotificationEmail = (
     <body>
       <div class="container">
         <div class="header">
-          <h1>🔔 New Booking Alert</h1>
+          <h1>New Booking Alert</h1>
           <p>Admin Notification</p>
         </div>
         
         <div class="content">
           <div class="urgent">
-            <strong>⚠️ Action Required:</strong> New booking received and confirmed. Please prepare for the session.
+            <strong>Action required:</strong> New booking received and confirmed. Please prepare for the session.
           </div>
           
           <div class="booking-details">
@@ -244,12 +252,12 @@ export const createAdminNotificationEmail = (
             </div>
           </div>
           
-          <h3>📋 Preparation Checklist</h3>
+          <h3>Preparation Checklist</h3>
           <ul>
-            <li>✅ Room setup and reset</li>
-            <li>✅ Equipment check</li>
-            <li>✅ Briefing materials ready</li>
-            <li>✅ Emergency procedures reviewed</li>
+            <li>Room setup and reset</li>
+            <li>Equipment check</li>
+            <li>Briefing materials ready</li>
+            <li>Emergency procedures reviewed</li>
           </ul>
           
           <p><strong>Next Steps:</strong></p>
@@ -283,8 +291,12 @@ export const createContactFormEmail = (formData: {
     <!DOCTYPE html>
     <html>
     <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
       <style>
-        body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color: #333; }
+        body { font-family: Inter, system-ui, Arial, sans-serif; line-height: 1.6; color: #333; }
+        h1, h2, h3 { font-family: Oswald, system-ui, Arial, sans-serif; font-weight: 600; letter-spacing: 0.03em; }
         .container { max-width: 600px; margin: 0 auto; padding: 20px; }
         .header { background: #121212; color: #D4AF37; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
         .content { background: white; padding: 30px; border: 1px solid #ddd; }
@@ -296,7 +308,7 @@ export const createContactFormEmail = (formData: {
     <body>
       <div class="container">
         <div class="header">
-          <h1>📧 Contact Form Message</h1>
+          <h1>Contact Form Message</h1>
           <p>New message from website</p>
         </div>
         

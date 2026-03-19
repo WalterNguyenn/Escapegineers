@@ -124,7 +124,6 @@ export default function AdminPage() {
 
           {bookings.length === 0 ? (
             <div className="px-6 py-12 text-center">
-              <div className="text-4xl mb-4">📋</div>
               <h3 className="text-lg font-medium text-light-text dark:text-dark-text mb-2">
                 No bookings yet
               </h3>

@@ -245,7 +245,7 @@ function CheckoutFormInner({ room, date, timeSlot, onBookingComplete }: Checkout
             {/* Stripe Badge */}
             <div className="text-center">
               <p className="font-body text-xs text-light-muted dark:text-dark-muted">
-                🔒 Secured by Stripe
+                Secured by Stripe
               </p>
             </div>
           </form>

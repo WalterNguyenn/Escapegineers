@@ -51,7 +51,7 @@ export default function ConfirmationScreen({ booking, room, timeSlot }: Confirma
           </svg>
         </div>
         <h1 className="font-heading text-4xl font-bold text-light-text dark:text-dark-text mb-2">
-          Success! You&apos;re Locked In. 🎉
+          Booking confirmed
         </h1>
         <p className="font-body text-light-muted dark:text-dark-muted text-lg">
           Your escape room booking has been confirmed. Get ready for an amazing adventure!
@@ -221,10 +221,10 @@ export default function ConfirmationScreen({ booking, room, timeSlot }: Confirma
       </div>
 
       {/* Leaderboard Teaser */}
-      <div className="bg-gradient-to-r from-light-gold/10 to-light-gold/5 dark:from-dark-gold/10 dark:to-dark-gold/5 rounded-lg p-6 border border-light-gold/20 dark:border-dark-gold/20">
+      <div className="rounded-lg border border-light-gold/30 bg-light-hover p-6 dark:border-dark-gold/30 dark:bg-dark-hover">
         <div className="text-center">
           <h3 className="font-heading text-xl font-bold text-light-text dark:text-dark-text mb-2">
-            Think You Can Make the Top 5? 🏆
+            Think You Can Make the Top 5?
           </h3>
           <p className="font-body text-light-muted dark:text-dark-muted mb-4">
             Your escape time will be recorded and added to our leaderboard. 

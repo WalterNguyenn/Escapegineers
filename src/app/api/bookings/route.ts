@@ -10,24 +10,25 @@ const bookings: BookingData[] = []
 export async function POST(request: NextRequest) {
   try {
     const bookingData: BookingData = await request.json()
-    
-    // Add timestamp and ID
+
+    const room = AVAILABLE_ROOMS.find(r => r.id === bookingData.roomId)
+    if (!room || !room.available) {
+      return NextResponse.json({ error: 'This room is not open for booking yet.' }, { status: 400 })
+    }
+
     const newBooking: BookingData = {
       ...bookingData,
       id: generateBookingId(),
       createdAt: new Date(),
-      status: 'confirmed'
+      status: 'confirmed',
     }
-    
-    // Save to storage (in real app, this would be a database)
+
     bookings.push(newBooking)
-    
-    // Get room and time slot details for emails
-    const room = AVAILABLE_ROOMS.find(r => r.id === newBooking.roomId)
-    const timeSlots = generateTimeSlots(new Date(newBooking.date), room?.duration || 60)
+
+    const timeSlots = generateTimeSlots(new Date(newBooking.date), room.duration)
     const timeSlot = timeSlots.find(ts => ts.id === newBooking.timeSlot)
     
-    if (room && timeSlot) {
+    if (timeSlot) {
       // Send confirmation email to customer
       const customerEmail = createBookingConfirmationEmail(newBooking, room, timeSlot)
       const customerEmailResult = await sendEmail(

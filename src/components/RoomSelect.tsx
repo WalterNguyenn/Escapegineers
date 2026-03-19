@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Room } from '@/lib/types'
 import { formatPrice } from '@/lib/booking-utils'
 
@@ -48,16 +49,14 @@ export default function RoomSelect({ rooms, selectedRoom, onRoomSelect }: RoomSe
             `}
             onClick={() => room.available && onRoomSelect(room)}
           >
-            {/* Room Image */}
-            <div className="h-48 bg-gradient-to-br from-light-gold dark:from-dark-gold to-light-gold/60 dark:to-dark-gold/60 rounded-t-lg relative">
-              <div className="absolute inset-0 bg-black bg-opacity-40 rounded-t-lg flex items-center justify-center">
-                <h3 className="font-heading text-xl font-bold text-white text-center px-4">
-                  {room.title}
-                </h3>
+            <div className="relative h-48 w-full overflow-hidden rounded-t-lg">
+              <Image src={room.image} alt="" fill className="object-cover" sizes="(max-width:768px) 100vw, 33vw" />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/45">
+                <h3 className="px-4 text-center font-heading text-xl font-bold text-white">{room.title}</h3>
               </div>
               {!room.available && (
-                <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-body">
-                  Unavailable
+                <div className="absolute right-4 top-4 rounded-full bg-neutral-900/85 px-3 py-1 font-body text-sm text-white">
+                  Coming soon
                 </div>
               )}
               {selectedRoom?.id === room.id && (
@@ -90,8 +89,8 @@ export default function RoomSelect({ rooms, selectedRoom, onRoomSelect }: RoomSe
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-body text-light-muted dark:text-dark-muted">Price:</span>
-                  <span className="font-body text-light-gold dark:text-dark-gold font-semibold">
-                    {formatPrice(room.price)}/person
+                  <span className="font-body font-semibold text-light-gold dark:text-dark-gold">
+                    {room.price === 0 ? 'Free' : `${formatPrice(room.price)}/person`}
                   </span>
                 </div>
               </div>
@@ -113,7 +112,11 @@ export default function RoomSelect({ rooms, selectedRoom, onRoomSelect }: RoomSe
                   }
                 `}
               >
-                {!room.available ? 'Unavailable' : selectedRoom?.id === room.id ? 'Selected' : 'Select Room'}
+                {!room.available
+                  ? 'Coming soon'
+                  : selectedRoom?.id === room.id
+                    ? 'Selected'
+                    : 'Select Room'}
               </button>
             </div>
           </div>
@@ -121,9 +124,8 @@ export default function RoomSelect({ rooms, selectedRoom, onRoomSelect }: RoomSe
       </div>
 
       {rooms.length === 0 && (
-        <div className="text-center py-12">
-          <div className="text-6xl mb-4">🏢</div>
-          <h3 className="font-heading text-2xl font-bold text-light-text dark:text-dark-text mb-2">
+        <div className="py-12 text-center">
+          <h3 className="font-heading mb-2 text-2xl font-bold text-light-text dark:text-dark-text">
             No Rooms Available
           </h3>
           <p className="font-body text-light-muted dark:text-dark-muted">

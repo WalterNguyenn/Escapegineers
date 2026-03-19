@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
@@ -11,9 +12,19 @@ export default function NavBar() {
     <nav className="bg-light-card dark:bg-dark-surface border-b border-light-border dark:border-dark-border shadow-sm transition-colors">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="font-heading text-2xl font-bold text-light-text dark:text-dark-text">
-            Escapegineers
+          {/* Wordmark */}
+          <Link
+            href="/"
+            className="flex items-center text-light-gold dark:text-dark-gold"
+          >
+            <Image
+              src="/images/wordmarklogo.png"
+              alt="Escapegineers"
+              width={220}
+              height={48}
+              className="h-9 w-auto max-w-[180px] object-contain sm:h-10 sm:max-w-[240px]"
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}

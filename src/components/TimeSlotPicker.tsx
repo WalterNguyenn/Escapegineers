@@ -151,8 +151,7 @@ export default function TimeSlotPicker({
               })}
             </div>
           ) : (
-            <div className="text-center py-8">
-              <div className="text-4xl mb-4">📅</div>
+            <div className="py-8 text-center">
               <p className="font-body text-light-muted dark:text-dark-muted">
                 No time slots available for this date
               </p>
