@@ -13,6 +13,10 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: 'Escapegineers - Purdue Escape Room',
   description: 'A Purdue-inspired escape room website built with Next.js',
+  icons: {
+    icon: [{ url: '/images/Logo.svg', type: 'image/svg+xml' }],
+    shortcut: '/images/Logo.svg',
+  },
 }
 
 export default function RootLayout({
